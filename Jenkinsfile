@@ -10,6 +10,9 @@ pipeline {
             }
         }
         stage('Notification') {
-            slackSend channel: "#balag", message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"
+            steps{
+                echo 'inside slack notification'
+                slackSend channel: "#balag", message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"
+            }
     }
 }
