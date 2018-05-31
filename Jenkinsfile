@@ -2,7 +2,7 @@
 pipeline {
     agent any 
     stages {
-        stage('Stage 1') {
+        stage('Init') {
             steps {
                 echo 'Hello world!' 
                 echo BUILD_NUMBER
@@ -10,9 +10,10 @@ pipeline {
             }
         }
         stage('Notification') {
-            steps{
+            steps {
                 echo 'inside slack notification'
-                slackSend channel: "#balag", message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"
+              slackSend channel: "#balag", message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"
             }
     }
+}
 }
