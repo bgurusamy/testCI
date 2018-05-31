@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Hello world!' 
                 echo BUILD_NUMBER
-                echo currentBuild.timeInMillis
+                echo String.valueOf(currentBuild.timeInMillis)
             }
         }
         stage('Notification') {
