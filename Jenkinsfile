@@ -35,7 +35,6 @@
     
         post{
           
-                echo 'inside slack notification'
                 // slackSend channel: SLACK_CHANNEL, color: 'good', message: env.BUILD_URL + ' deployment started '
               success {
             slackSend channel: '#visetest',color: 'good', message: "SUCCESS: ${JOB_NAME} ${BUILD_NUMBER},baseUrl:'https://cim.slack.com/services/hooks/jenkins-ci/',teamDomain: 'cim', token: 'ldhDuSiSkvnLEeFLUPyWndJF'"
