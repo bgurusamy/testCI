@@ -23,7 +23,13 @@
             steps {
               withMaven(maven:'/usr/local/Cellar/maven@3.3/3.3.9') {
 
-                sh 'mvn -Dmaven.test.failure.ignore=true install' 
+             
+               try {
+                            sh "mvn clean install"
+                        } catch (Exception err) {
+                            echo 'Maven clean install failed'
+                            currentBuild.result = 'FAILURE'
+                        } 
               }
             }
             post {
