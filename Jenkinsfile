@@ -23,6 +23,13 @@
                 success {
                     junit 'target/surefire-reports/**/*.xml' 
                 }
+             failure {
+      // notify users when the Pipeline fails
+          mail to: 'Balachandar_gurusamy@cable.comcast.com',
+          subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+          body: "Something is wrong with ${env.BUILD_URL}"
+               }
+             
             }
         }
     
