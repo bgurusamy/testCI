@@ -36,6 +36,15 @@
             steps {
                 echo 'inside slack notification'
                 // slackSend channel: SLACK_CHANNEL, color: 'good', message: env.BUILD_URL + ' deployment started '
+              success {
+            slackSend color: 'good', message: "SUCCESS: ${JOB_NAME} ${BUILD_NUMBER},baseUrl:'https://cim.slack.com/services/hooks/jenkins-ci/',teamDomain: 'cim', token: 'ldhDuSiSkvnLEeFLUPyWndJF'"
+        }
+        failure {
+            slackSend color: '#ea0017', message: "FAILURE: ${JOB_NAME} ${BUILD_NUMBER}. See the results here: ${BUILD_URL},baseUrl:'https://cim.slack.com/services/hooks/jenkins-ci/',teamDomain: 'cim', token: 'ldhDuSiSkvnLEeFLUPyWndJF'"
+        }
+        unstable {
+            slackSend color: '#ffb600', message: "UNSTABLE: ${JOB_NAME} ${BUILD_NUMBER}. See the results here: ${BUILD_URL},baseUrl:'https://cim.slack.com/services/hooks/jenkins-ci/',teamDomain: 'cim', token: 'ldhDuSiSkvnLEeFLUPyWndJF'"
+        }
              slackSend channel: '#visetest', color: 'good', message:'Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}',baseUrl:'https://cim.slack.com/services/hooks/jenkins-ci/',teamDomain: 'cim', token: 'ldhDuSiSkvnLEeFLUPyWndJF'
                 //slackSend channel: "#channel-name", message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"
              }
