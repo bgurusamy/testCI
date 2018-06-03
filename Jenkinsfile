@@ -1,10 +1,10 @@
 #!/usr/bin/env groovy
  pipeline {
     agent any 
- //tools { 
-   //     maven 'Maven 3.3.9' 
-     //   jdk 'jdk8' 
-    //}
+ tools { 
+        maven 'Maven 3.3.9' 
+        jdk 'jdk8' 
+    }
     stages {
       stage('Setup') {
             steps {
@@ -21,7 +21,7 @@
 
         stage ('Build') {
             steps {
-              withMaven() {
+              withMaven(maven:'/usr/local/Cellar/maven@3.3/3.3.9/libexec') {
 
                 sh 'mvn -Dmaven.test.failure.ignore=true install' 
               }
