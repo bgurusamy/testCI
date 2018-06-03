@@ -21,7 +21,7 @@
 
         stage ('Build') {
             steps {
-              withMaven(maven: 'M3', jdk: 'jdk8', globalMavenSettingsConfig: 'default-global-settings') {
+              withMaven(maven: 'M3', jdk: 'jdk8') {
 
                 sh 'mvn -Dmaven.test.failure.ignore=true install' 
               }
