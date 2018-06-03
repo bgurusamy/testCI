@@ -13,7 +13,7 @@
             steps {
                 echo 'inside slack notification'
                 // slackSend channel: SLACK_CHANNEL, color: 'good', message: env.BUILD_URL + ' deployment started '
-             slackSend channel: '#jenkins-latest', color: 'good', message: 'Slack Message',baseUrl:'https://cim.slack.com/services/hooks/jenkins-ci/',teamDomain: 'cim', token: 'RNywdyYpxF6RwN9dsqW83I7H'
+             slackSend channel: '#visetest', color: 'good', message: 'Slack Message',baseUrl:'https://cim.slack.com/services/hooks/jenkins-ci/',teamDomain: 'cim', token: 'ldhDuSiSkvnLEeFLUPyWndJF'
                 //slackSend channel: "#channel-name", message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"
              }
     }
