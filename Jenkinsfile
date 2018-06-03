@@ -1,6 +1,5 @@
 #!/usr/bin/env groovy
-def SLACK_CHANNEL="
-pipeline {
+ pipeline {
     agent any 
     stages {
         stage('Init') {
