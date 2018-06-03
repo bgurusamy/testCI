@@ -40,7 +40,7 @@
             slackSend channel: '#visetest',color: 'good',baseUrl:'https://cim.slack.com/services/hooks/jenkins-ci/',teamDomain: 'cim', token:'ldhDuSiSkvnLEeFLUPyWndJF',message: "SUCCESS: ${JOB_NAME} ${BUILD_NUMBER}"
         }
         failure {
-            slackSend channel: '#visetest',color: '#ea0017',baseUrl:'https://cim.slack.com/services/hooks/jenkins-ci/',teamDomain: 'cim', token: 'ldhDuSiSkvnLEeFLUPyWndJF',message:"FAILURE: ${JOB_NAME} ${BUILD_NUMBER}. See the results here: ${BUILD_URL}"
+            slackSend channel: '#visetest',color: '#ea0017',baseUrl:'https://cim.slack.com/services/hooks/jenkins-ci/',teamDomain: 'cim', token: 'ldhDuSiSkvnLEeFLUPyWndJF',message:'FAILURE: ${JOB_NAME} ${BUILD_NUMBER}. See the results here: ${BUILD_URL}'
         }
         unstable {
             slackSend channel: '#visetest',color: '#ffb600',baseUrl:'https://cim.slack.com/services/hooks/jenkins-ci/',teamDomain: 'cim', token: 'ldhDuSiSkvnLEeFLUPyWndJF',message: "UNSTABLE: ${JOB_NAME} ${BUILD_NUMBER}. See the results here: ${BUILD_URL}"
