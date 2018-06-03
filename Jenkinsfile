@@ -1,11 +1,10 @@
 #!/usr/bin/env groovy
  pipeline {
     agent any 
-   tools {
-      
-        maven 'Maven 3.3.9'
-        jdk 'jdk8'
-    }
+  tools{
+maven 'maven 3'
+jdk 'java 8'
+}
     stages {
         stage ('Initialize') {
             steps {
