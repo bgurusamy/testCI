@@ -21,6 +21,8 @@
 
         stage ('Build') {
             steps {
+                             script {
+
               withMaven(maven:'/usr/local/Cellar/maven@3.3/3.3.9') {
 
              
@@ -31,7 +33,7 @@
                             currentBuild.result = 'FAILURE'
                         } 
               }
-            }
+                             }}
             post {
                 success {
                     junit 'target/surefire-reports/**/*.xml' 
