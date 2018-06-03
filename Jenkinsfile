@@ -21,7 +21,7 @@
 
         stage ('Build') {
             steps {
-              withMaven(maven:'/usr/local/Cellar/maven@3.3/3.3.9/libexec') {
+              withMaven(maven:'/usr/local/bin/') {
 
                 sh 'mvn -Dmaven.test.failure.ignore=true install' 
               }
