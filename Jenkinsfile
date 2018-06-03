@@ -6,6 +6,11 @@
      //   jdk 'jdk8' 
     //}
     stages {
+      stage('Setup') {
+            steps {
+                slackSend color: 'good', message: "STARTED: ${JOB_NAME} ${BUILD_NUMBER} ${BUILD_URL}",baseUrl:'https://cim.slack.com/services/hooks/jenkins-ci/',teamDomain:'cim',token:'ldhDuSiSkvnLEeFLUPyWndJF'
+            }
+        }
         stage ('Initialize') {
             steps {
                    sh '''
