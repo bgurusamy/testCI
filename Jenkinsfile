@@ -29,8 +29,8 @@
                }
                              }
             post {
-                failure {
-                    junit 'target/surefire-reports/**/*.xml' 
+                success {
+                    //junit 'target/surefire-reports/**/*.xml' 
                 }
              failure {
       // notify users when the Pipeline fails
