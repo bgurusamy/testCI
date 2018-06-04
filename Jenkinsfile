@@ -23,7 +23,7 @@
             steps {
                              script {
 
-              withMaven(maven:'/usr/local/Cellar/maven@3.3/3.3.9') {
+              withMaven(maven:maven_local) {
 
              
                try {
