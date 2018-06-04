@@ -23,7 +23,7 @@
             steps {
                              script {
 
-              withMaven(maven:maven_local) {
+              withMaven(maven:'maven_local') {
 
              
                try {
