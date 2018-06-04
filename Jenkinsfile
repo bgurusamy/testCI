@@ -21,19 +21,13 @@
 
         stage ('Build') {
             steps {
-                             script {
-
+ 
               withMaven(maven:'maven_local') {
 
              
-               try {
-                            sh "mvn clean install"
-                        } catch (Exception err) {
-                            echo 'Maven clean install failed'
-                            currentBuild.result = 'FAILURE'
-                        } 
-              }
-                             }}
+                             sh "mvn clean install"
+               }
+                             }
             post {
                 success {
                     junit 'target/surefire-reports/**/*.xml' 
