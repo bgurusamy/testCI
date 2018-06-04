@@ -30,6 +30,7 @@
                              }
             post {
                 success {
+                 echo 'test success'
                     //junit 'target/surefire-reports/**/*.xml' 
                 }
              failure {
