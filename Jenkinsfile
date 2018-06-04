@@ -49,7 +49,7 @@
                  withEnv(["JAVA_HOME=${ tool 'jdk8' }", "PATH+MAVEN=${tool 'maven_local'}/bin:${env.JAVA_HOME}/bin"]) {   
                 sh 'mvn clean package sonar:sonar'
                  }
-              }
+              
     }
    }
       }
