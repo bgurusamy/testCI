@@ -45,7 +45,7 @@
    
    stage('Quality Analysis') {
     steps {
-              withSonarQubeEnv('My SonarQube Server') {
+              withSonarQubeEnv('sonarqube') {
                 sh 'mvn clean package sonar:sonar'
               }
     
