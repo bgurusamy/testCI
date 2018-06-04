@@ -29,7 +29,7 @@
                }
                              }
             post {
-                success {
+                failure {
                     junit 'target/surefire-reports/**/*.xml' 
                 }
              failure {
